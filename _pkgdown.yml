@@ -1,0 +1,5 @@
+url: https://mikmart.github.io/rmdmatter
+
+template:
+  params:
+    bootswatch: flatly
