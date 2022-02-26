@@ -13,5 +13,6 @@ Imports:
     fs,
     rlang,
     rmarkdown
-URL: https://github.com/mikmart/rmdmatter
+URL: https://github.com/mikmart/rmdmatter,
+    https://mikmart.github.io/rmdmatter/
 BugReports: https://github.com/mikmart/rmdmatter/issues
