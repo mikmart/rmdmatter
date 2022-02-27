@@ -1,6 +1,5 @@
 url: https://mikmart.github.io/rmdmatter/
 
 template:
-  params:
-    bootstrap: 5
-    bootswatch: flatly
+  bootstrap: 5
+  bootswatch: minty

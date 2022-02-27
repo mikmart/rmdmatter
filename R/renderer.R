@@ -4,10 +4,37 @@
 #' in R Markdown documents, which lets you [customize the `Knit` button in
 #' RStudio](https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html).
 #'
+#' Renderer functions are particularly useful in conjunction with the `knit`
+#' metadata field to specify custom rendering options in RStudio. For example,
+#' extending the example header in [rmarkdown::rmd_metadata], you can easily
+#' specify a fixed output file with `rmarkdown_renderer()`:
+#'
+#' ```
+#' ---
+#' title: "Crop Analysis Q3 2013"
+#' author: Martha Smith
+#' date: October 23rd, 2013
+#' knit: rmdmatter::rmarkdown_renderer(output_file = "analysis-q3")
+#' ---
+#' ```
+#'
+#' Or use `renaming_renderer()` to name the output dynamically using fields in
+#' the front matter:
+#'
+#' ```
+#' ---
+#' title: "Crop Analysis Q3 2013"
+#' author: Martha Smith
+#' date: October 23rd, 2013
+#' knit: |
+#'   rmdmatter::renaming_renderer(function(metadata) metadata$title)
+#' ---
+#' ```
+#'
 #' @param ... Arguments passed to the underlying rendering function when the
 #'   returned function is called.
 #' @return A function that takes two arguments, `input` and `encoding`, and
-#'   renders the `input` R Markdown document.
+#'   renders the `input` R Markdown document when called.
 #'
 #' @name renderer
 NULL

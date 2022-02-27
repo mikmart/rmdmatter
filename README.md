@@ -27,7 +27,7 @@ rename_rendered(output_file, function(metadata) {
 })
 ```
 
-Or use a helper directly in the `knit` field of your front matter to integrate with the RStudio `Knit` button:
+Or use a `rmdmatter::renderer` in the `knit` field to integrate with the RStudio `Knit` button:
 
 ``` markdown
 ---

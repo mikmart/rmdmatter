@@ -10,6 +10,14 @@
 #' @return A string that gives the path to the renamed file.
 #' @seealso [render()] for creating an object to use as the `file` argument.
 #'
+#' @examples
+#' \dontrun{
+#' # Make sure to use rmdmatter's render() to have metadata available
+#' output_file <- rmdmatter::render(input_file)
+#' rename_rendered(output_file, function(metadata) {
+#'   with(metadata, paste(title, "by", author, "on", date))
+#' })
+#'}
 #' @export
 rename_rendered <- function(file, callback) {
   metadata <- rmd_metadata(file)

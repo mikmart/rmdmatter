@@ -91,6 +91,6 @@ output file.
 
 \code{\link[=render_and_rename]{render_and_rename()}} to do the rendering and renaming in one step.
 
-\link{renderer} to pre-specify arguments, e.g. in the \code{knit} front matter
-field.
+\link{renderer} to pre-specify arguments, useful e.g. in the \code{knit} front
+matter field.
 }

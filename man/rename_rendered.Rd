@@ -21,6 +21,15 @@ A string that gives the path to the renamed file.
 \description{
 Rename a rendered file with YAML front matter metadata
 }
+\examples{
+\dontrun{
+# Make sure to use rmdmatter's render() to have metadata available
+output_file <- rmdmatter::render(input_file)
+rename_rendered(output_file, function(metadata) {
+  with(metadata, paste(title, "by", author, "on", date))
+})
+}
+}
 \seealso{
 \code{\link[=render]{render()}} for creating an object to use as the \code{file} argument.
 }

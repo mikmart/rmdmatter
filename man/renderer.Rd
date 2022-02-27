@@ -24,11 +24,33 @@ name is changed.}
 }
 \value{
 A function that takes two arguments, \code{input} and \code{encoding}, and
-renders the \code{input} R Markdown document.
+renders the \code{input} R Markdown document when called.
 }
 \description{
 The returned function is compatible with the \code{knit} YAML front matter field
 in R Markdown documents, which lets you \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-knit.html}{customize the \code{Knit} button in RStudio}.
+}
+\details{
+Renderer functions are particularly useful in conjunction with the \code{knit}
+metadata field to specify custom rendering options in RStudio. For example,
+extending the example header in \link[rmarkdown:rmd_metadata]{rmarkdown::rmd_metadata}, you can easily
+specify a fixed output file with \code{rmarkdown_renderer()}:\preformatted{---
+title: "Crop Analysis Q3 2013"
+author: Martha Smith
+date: October 23rd, 2013
+knit: rmdmatter::rmarkdown_renderer(output_file = "analysis-q3")
+---
+}
+
+Or use \code{renaming_renderer()} to name the output dynamically using fields in
+the front matter:\preformatted{---
+title: "Crop Analysis Q3 2013"
+author: Martha Smith
+date: October 23rd, 2013
+knit: |
+  rmdmatter::renaming_renderer(function(metadata) metadata$title)
+---
+}
 }
 \section{Functions}{
 \itemize{
